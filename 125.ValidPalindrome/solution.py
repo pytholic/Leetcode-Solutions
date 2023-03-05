@@ -18,9 +18,8 @@ class Solution:
 
         first = 0
         last = len(s) - 1
-        mid = len(s) // 2
 
-        while first <= mid <= last:
+        while first < last:
             if s[first] != s[last]:
                 return False
 

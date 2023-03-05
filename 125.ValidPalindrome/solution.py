@@ -1,7 +1,15 @@
 class Solution:
+    @staticmethod
+    def is_alpha_num(c):
+        return (
+            ord("A") <= ord(c) <= ord("Z")
+            or ord("a") <= ord(c) <= ord("z")
+            or ord("0") <= ord(c) <= ord("9")
+        )
+
     def isPalindrome(self, s: str) -> bool:
 
-        s = "".join(c for c in s if c.isalnum())
+        s = "".join(c for c in s if self.is_alpha_num(c))
 
         if not s:
             return True
@@ -27,5 +35,5 @@ s2 = "race a car"
 s3 = " "
 
 solution = Solution()
-res = solution.isPalindrome(s3)
+res = solution.isPalindrome(s2)
 print(res)
